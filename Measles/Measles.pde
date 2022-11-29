@@ -1,16 +1,28 @@
 //Global Variables
+int appWidth, appHeight;
 //
 void setup() {
   //Display & Orientation
-  //Population
-  //Theme: i.e Face
-  //Back IMage with tint()
+  size(600, 400);
+  //fullScreen(); //displayWidth & displayHeight
+  displayOrientation(); //need smaller dimension (ternary operator)
+  appWidth = width;
+  appHeight = height;
+  //
+  population();
+  //Theme: i.e Face (will work in portrait and landscape)
+  faceSetup();
+  eyes();
+  nose();
+  mouth();
+  measlesDynamic();
+  //Back Image with tint()
 } //End setup
 //
 void draw() {
   //OS System Start Button
-  //Splash Screen Level Start Button | Measles Reset Button
-  //Theme: Measles With Different Sizes and Colours
+  //Splash Screen Level start button | Measles Reset Button
+  //Theme: measles with different sizes and colours
 } //End draw
 //
 void keyPressed() {
@@ -18,10 +30,11 @@ void keyPressed() {
 } //End keyPressed
 //
 void mousePressed() {
+  //CAUTION: all buttons have Hover Over
   //OS System Start Button
   //Splash Screen Start Button
   //Quit Button
-  //Night Mode (Includes day mode)
+  //Night Mode (includes day mode)
 } //End mousePressed
 //
 //End MAIN Program
