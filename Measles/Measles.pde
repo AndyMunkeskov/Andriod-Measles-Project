@@ -3,7 +3,7 @@ int appWidth, appHeight;
 //
 void setup() {
   //Display & Orientation
-  size(600, 400);
+  size(900, 700);
   //fullScreen(); //displayWidth & displayHeight
   displayOrientation(); //need smaller dimension (ternary operator)
   appWidth = width;
@@ -12,10 +12,10 @@ void setup() {
   population();
   //Theme: i.e Face (will work in portrait and landscape)
   faceSetup();
-  eyes();
-  nose();
-  mouth();
-  measlesDynamic();
+  ellipse(270, 220, 190, 190);
+  ellipse(630, 220, 190, 190);
+  triangle(300,400,450,290,600,400);
+  strokeWeight(); 
   //Back Image with tint()
 } //End setup
 //
