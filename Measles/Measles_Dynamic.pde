@@ -1,4 +1,5 @@
 float measleX, measleY, measleDiameter;
+color measlesColour;
 //
 void measlesDynamic() {
   //
@@ -7,8 +8,17 @@ void measlesDynamic() {
   float measleRadius = measleDiameter * 1/2;
   measleX = random(rectFaceX+measleRadius, rectFaceX+rectFaceWidth-measleRadius); //use smallerDimension
   measleY = random(appHeight*0+measleRadius, appHeight-measleRadius);
+  //Night Mode
+  measlesColour = ( nightMode==true ) ? color( 156, random( 0 ), 170) : color( 255, random(35), random(0) ) ;
+  //measlesColour = color(156, random(0, 55), random(170) );
+  //purple: (156, 0, 170)
+  //Dark red: (255, 35, 0)
   //
+  noStroke();
+  fill(measlesColour);
   ellipse( measleX, measleY, measleDiameter, measleDiameter );
+  fill(resetWhite);
+  stroke(reset);
 } //End measlesDynamic
 //
 //Emd Draw Measles Subprogram

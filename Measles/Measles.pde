@@ -1,6 +1,8 @@
 //Global Variables
 int appWidth, appHeight;
 int reset=1;
+color resetWhite=#FFFFFF;
+boolean nightMode;
 //
 void setup() {
   //Display & Orientation
@@ -27,6 +29,12 @@ void draw() {
 //
 void keyPressed() {
   //KeyBoard Shortcuts
+  if ( key=='N' | key=='n') {
+    if ( nightMode==false ) {
+      nightMode = true;
+    } else{
+    }
+  }
 }//End keyPressed
 //
 void mousePressed() {
