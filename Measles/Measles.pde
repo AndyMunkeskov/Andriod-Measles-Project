@@ -1,40 +1,39 @@
 //Global Variables
 int appWidth, appHeight;
+int reset=1;
 //
 void setup() {
   //Display & Orientation
-  size(900, 700);
-  //fullScreen(); //displayWidth & displayHeight
-  displayOrientation(); //need smaller dimension (ternary operator)
+  size(600, 400); 
+  displayOrientation();
   appWidth = width;
   appHeight = height;
   //
   population();
-  //Theme: i.e Face (will work in portrait and landscape)
-  faceSetup();
-  ellipse(270, 220, 190, 190);
-  ellipse(630, 220, 190, 190);
-  triangle(300,400,450,290,600,400);
-  strokeWeight(); 
-  //Back Image with tint()
-} //End setup
+  //Theme: i.e. Face (will work in portrait and landscape)
+  faceSetup(); //Teacher Lesson
+  //Background Image (could be in draw too)
+}//End setup
 //
 void draw() {
-  //OS System Start Button
-  //Splash Screen Level start button | Measles Reset Button
-  //Theme: measles with different sizes and colours
-} //End draw
+  measlesDynamic(); //Teacher Lesson
+    eyes(); //Student created
+  mouth(); //Student created
+  nose(); //Student created
+  //OS System Button
+  //Start Button | Measles Reset Button
+  //Theme: face & measles with different sizes and colours
+}//End draw
 //
 void keyPressed() {
-  //keyBoard Shortcuts
-} //End keyPressed
+  //KeyBoard Shortcuts
+}//End keyPressed
 //
 void mousePressed() {
-  //CAUTION: all buttons have Hover Over
-  //OS System Start Button
-  //Splash Screen Start Button
+  //OS System Button
+  //Start Button
   //Quit Button
-  //Night Mode (includes day mode)
-} //End mousePressed
+  //Night Mode
+}//End mousePressed
 //
 //End MAIN Program
