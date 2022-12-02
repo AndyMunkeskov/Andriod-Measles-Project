@@ -3,6 +3,10 @@ int appWidth, appHeight;
 int reset=1;
 color resetWhite=#FFFFFF;
 boolean nightMode;
+Boolean start=false, noNowReallyStart=false;
+float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
+color quitButtonColour, purple=#9100FA, red=#FF030B;
+String title = "Start", footer="Quit";
 //
 void setup() {
   //Display & Orientation
@@ -18,13 +22,13 @@ void setup() {
 }//End setup
 //
 void draw() {
-  measlesDynamic(); //Teacher Lesson
-    eyes(); //Student created
-  mouth(); //Student created
-  nose(); //Student created
-  //OS System Button
-  //Start Button | Measles Reset Button
-  //Theme: face & measles with different sizes and colours
+  measlesDynamic();
+    eyes(); 
+  mouth(); 
+  nose();
+  fill(purple);
+  rect( quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight );
+  fill(red);
 }//End draw
 //
 void keyPressed() {
@@ -38,10 +42,9 @@ void keyPressed() {
 }//End keyPressed
 //
 void mousePressed() {
-  //OS System Button
-  //Start Button
-  //Quit Button
-  //Night Mode
+  OS_Start();
+  //
+  if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight ) exit();
 }//End mousePressed
 //
 //End MAIN Program

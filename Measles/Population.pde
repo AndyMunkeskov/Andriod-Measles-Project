@@ -6,6 +6,11 @@ void population() {
   smallerDimension = ( landscape == true) ? appHeight : appWidth;
   println(smallerDimension);
   //
+  quitButtonX = centerX - ( appWidth * 1/2 );
+  quitButtonY = centerY - ( appHeight * 1/3 );
+  quitButtonWidth = appWidth * 1/6;
+  quitButtonHeight = appHeight * 1/7;
+  //
   rectFaceX = centerX - smallerDimension*1/2;
   rectFaceY = appHeight * 0;
   rectFaceWidth = smallerDimension;
