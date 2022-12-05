@@ -26,9 +26,10 @@ void draw() {
     eyes(); 
   mouth(); 
   nose();
+  fill(red);
+  rect( quitButtonX, quitButtonY*3, quitButtonWidth, quitButtonHeight );
   fill(purple);
   rect( quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight );
-  fill(red);
 }//End draw
 //
 void keyPressed() {
