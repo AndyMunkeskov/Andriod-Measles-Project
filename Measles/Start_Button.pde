@@ -1,6 +1,6 @@
 void OS_Start() {
   //OS Level Start Button
   start = true;
-  println("To Start, Press the Space Bar");
+  println("Press Purple Button to Stop and red button to reset");
   //
 }//End OS_Start

@@ -7,6 +7,7 @@ Boolean start=false, noNowReallyStart=false;
 float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
 color quitButtonColour, purple=#9100FA, red=#FF030B;
 String title = "Start", footer="Quit";
+PFont Quit;
 //
 void setup() {
   //Display & Orientation
@@ -30,6 +31,10 @@ void draw() {
   rect( quitButtonX, quitButtonY*3, quitButtonWidth, quitButtonHeight );
   fill(purple);
   rect( quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight );
+  textSize(32);
+  fill(red);
+  text(" Quit ", quitButtonX, 107);
+  Quit = createFont("Harrington", 107);
 }//End draw
 //
 void keyPressed() {
