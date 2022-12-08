@@ -15,6 +15,23 @@ void setup() {
   displayOrientation();
   appWidth = width;
   appHeight = height;
+  println("\t\t\tWidth="+width, "\tHeight ="+height);
+println("Display monitor:", "\twidth:"+displayWidth, "\theight:"+displayHeight);
+//
+String ls="Landscape or Square", p="portrait", DO="display orientation", instruct="turn your phone or it no workie :(";
+//
+if ( appWidth < appHeight ) { // Declaring Landscape and square
+   println(instruct);
+ } else {
+    println("Display: Good to Go");
+    if ( appWidth > displayWidth ) { //Fitting CANVAS into Monitor Display
+      appWidth=0;
+      appHeight=0;
+      println("STOP, is broken! ;(");
+    } else {
+      //Empty ELSE
+    }
+ }
   //
   population();
   //Theme: i.e. Face (will work in portrait and landscape)
