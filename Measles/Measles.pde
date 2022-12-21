@@ -13,6 +13,9 @@ PFont Quit;
 //
 void setup() {
   //Display & Orientation
+  //size(600,400); //Remind you of Display Geometry
+  minim = new Minim(this); //load from data directory, loadFile should also load from project folder
+  song1 = minim.loadFile("../Processing/libraries/minim");//able to pass absolute path, file name and extension, and
   size(600, 400); 
   displayOrientation();
   appWidth = width;
@@ -57,7 +60,9 @@ void draw() {
 }//End draw
 //
 void keyPressed() {
-  //KeyBoard Shortcuts
+ 
+  int loopNum = 2;
+  if ( key=='L' || key=='l' ) song1.loop(loopNum-1);
   if ( key=='N' | key=='n') {
     if ( nightMode==false ) {
       nightMode = true;
