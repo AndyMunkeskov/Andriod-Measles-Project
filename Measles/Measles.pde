@@ -1,4 +1,9 @@
-
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
 
 //Global Variables
 int appWidth, appHeight;
@@ -15,19 +20,19 @@ void setup() {
   //Display & Orientation
   //size(600,400); //Remind you of Display Geometry
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder
-  song1 = minim.loadFile("../Processing/libraries/minim");//able to pass absolute path, file name and extension, and
+  song1 = minim.loadFile("../Audio/");//able to pass absolute path, file name and extension, and
   size(600, 400); 
   displayOrientation();
   appWidth = width;
   appHeight = height;
   println("\t\t\tWidth="+width, "\tHeight ="+height);
-println("Display monitor:", "\twidth:"+displayWidth, "\theight:"+displayHeight);
-//
-String ls="Landscape or Square", p="portrait", DO="display orientation", instruct="turn your phone or it no workie :(";
-//
-if ( appWidth < appHeight ) { // Declaring Landscape and square
-   println(instruct);
- } else {
+  println("Display monitor:", "\twidth:"+displayWidth, "\theight:"+displayHeight);
+  //
+  String ls="Landscape or Square", p="portrait", DO="display orientation", instruct="turn your phone or it no workie :(";
+  //
+  if ( appWidth < appHeight ) { // Declaring Landscape and square
+    println(instruct);
+  } else {
     println("Display: Good to Go");
     if ( appWidth > displayWidth ) { //Fitting CANVAS into Monitor Display
       appWidth=0;
@@ -36,7 +41,7 @@ if ( appWidth < appHeight ) { // Declaring Landscape and square
     } else {
       //Empty ELSE
     }
- }
+  }
   //
   population();
   //Theme: i.e. Face (will work in portrait and landscape)
@@ -46,7 +51,7 @@ if ( appWidth < appHeight ) { // Declaring Landscape and square
 //
 void draw() {
   measlesDynamic();
-    eyes(); 
+  eyes(); 
   mouth(); 
   nose();
   fill(red);
@@ -60,13 +65,14 @@ void draw() {
 }//End draw
 //
 void keyPressed() {
- 
-  int loopNum = 2;
-  if ( key=='L' || key=='l' ) song1.loop(loopNum-1);
+  if ( key=='P' || key=='p' ) song1.play(); //Parameter is milli-seconds from start of audio file to start playing (illustrate with examples)
+  int loopNum = 2; //Local Variable plays once and loops twice
+  if ( key=='L' || key=='l' ) song1.loop(loopNum-1); //Parameter is Parameter is number of repeats
+  //
   if ( key=='N' | key=='n') {
     if ( nightMode==false ) {
       nightMode = true;
-    } else{
+    } else {
     }
   }
 }//End keyPressed
