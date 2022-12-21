@@ -1,3 +1,5 @@
+
+
 //Global Variables
 int appWidth, appHeight;
 int reset=1;
