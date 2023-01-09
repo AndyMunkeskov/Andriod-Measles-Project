@@ -70,8 +70,7 @@ void keyPressed() {
     if ( song1.isPlaying() ) {
       song1.pause();
     } else if ( song1.position() >= song1.length()-song1.length()*1/5 ) {
-      song1.rewind();
-      song1.play();
+     song1.pause();
     } else {
       song1.play();
     }
@@ -101,6 +100,9 @@ void mousePressed() {
   OS_Start();
   //
   if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight ) exit();
+  //
+  if ( mousePressed );
+  
 }//End mousePressed
 //
 //End MAIN Program
