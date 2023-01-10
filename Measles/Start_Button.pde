@@ -1,6 +1,6 @@
-void OS_Start() {
+void OS_on() {
   //OS Level Start Button
-  start = true;
+  OS_on = true;
   println("Press Purple Button to Stop and red button to reset");
   //
 }//End OS_Start

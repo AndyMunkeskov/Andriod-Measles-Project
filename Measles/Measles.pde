@@ -9,11 +9,11 @@ import ddf.minim.ugens.*;
 int appWidth, appHeight;
 int reset=1;
 color resetWhite=#FFFFFF;
+boolean OS_on=false, splashScreenStart=false;
 boolean nightMode;
-Boolean start=false, noNowReallyStart=false;
 float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
 color quitButtonColour, purple=#9100FA, red=#FF030B;
-String title = "Start", footer="Quit";
+String title ="Start", footer="Quit";
 PFont Quit;
 //
 void setup() {
@@ -21,6 +21,7 @@ void setup() {
   //size(600,400); //Remind you of Display Geometry
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder
   song1 = minim.loadFile("../Audio/Dramatic.mp3");//able to pass absolute path, file name and extension, and
+  effect1 = minim.loadFile("../Audio/Bonk.mp3");
   size(600, 400); 
   displayOrientation();
   appWidth = width;
@@ -38,24 +39,31 @@ void setup() {
       appWidth=0;
       appHeight=0;
       println("STOP, is broken! ;(");
+      if ( appWidth==0 || appHeight==0 ) exit();
+      if ( appWidth!=0 && appHeight!=0 ) println("Display: Good to Go");
     } else {
       //Empty ELSE
     }
   }
   //
   population();
-  //Theme: i.e. Face (will work in portrait and landscape)
-  faceSetup(); //Teacher Lesson
-  //Background Image (could be in draw too)
+  
+  faceSetup(); 
 }//End setup
 //
 void draw() {
+  if ( OS_on==true && splashScreenStart==false ) splashScreen(); //OS Level Mouse Click
+  if ( splashScreenStart==true ) homeScreen();
+//
   measlesDynamic();
   eyes(); 
   mouth(); 
   nose();
   fill(red);
   rect( quitButtonX, quitButtonY*3, quitButtonWidth, quitButtonHeight );
+  textSize(32);
+  fill(purple);
+  text("Reset", quitButtonX, 107);
   fill(purple);
   rect( quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight );
   textSize(32);
@@ -65,7 +73,9 @@ void draw() {
 }//End draw
 //
 void keyPressed() {
-  //if ( key=='P' || key=='p' ) song1.play(); //Parameter is milli-seconds from start of audio file to start playing (illustrate with examples)
+    if ( OS_on==true && key==' ' ) {
+    splashScreenStart = true;
+}//if ( key=='P' || key=='p' ) song1.play(); //Parameter is milli-seconds from start of audio file to start playing (illustrate with examples)
   if ( key=='P' || key=='p' ) {//Play Pause Stop Button
     if ( song1.isPlaying() ) {
       song1.pause();
@@ -97,9 +107,13 @@ void keyPressed() {
  }//End STOP Button
 }//End PLayMusic Buttons
 void mousePressed() {
-  OS_Start();
+  OS_on();
   //
   if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight ) exit();
+  //
+  if (mousePressed)
+     effect1.play();
+     effect1.rewind();
 }//End mousePressed
 //
 //End MAIN Program

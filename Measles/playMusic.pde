@@ -8,3 +8,4 @@ import ddf.minim.ugens.*;
 //global varibles
 Minim minim;
 AudioPlayer song1;
+AudioPlayer effect1;
