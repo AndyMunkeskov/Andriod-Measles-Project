@@ -100,9 +100,6 @@ void mousePressed() {
   OS_Start();
   //
   if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight ) exit();
-  //
-  if ( mousePressed );
-  
 }//End mousePressed
 //
 //End MAIN Program
