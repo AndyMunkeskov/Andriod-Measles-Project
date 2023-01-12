@@ -1,11 +1,12 @@
 //global variables
-PImage eyeImage, mouthImage, noseImage;
+PImage eyeImage, mouthImage, noseImage, HatImage;
 float eyeImageX, eyeImageY, eyeImageDiameter;
 //
 void imagePopulation(){
-eyeImage = loadImage("Images/Eye.png");
-noseImage = loadImage("Images/Nose.png");
-mouthImage = loadImage("Images/Mouth.jpg");
+eyeImage = loadImage("../Images/Eye.png");
+noseImage = loadImage("../Images/Nose.png");
+mouthImage = loadImage("../Images/Mouth.jpg");
+HatImage = loadImage("../Images/.png");
 //
 //eyes aspct ratio
  //ellipse(eyeImageX, eyeImageY, eyeImageDiameter);

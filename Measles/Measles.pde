@@ -123,6 +123,7 @@ void mousePressed() {
   //
   if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight ) exit();
   if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY*3.6 && mouseY<quitButtonY*3.6+quitButtonHeight )
+  
   //
   if (mousePressed)
      effect1.play();
