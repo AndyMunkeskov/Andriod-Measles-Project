@@ -63,7 +63,7 @@ void draw() {
   rect( quitButtonX, quitButtonY*3, quitButtonWidth, quitButtonHeight );
   textSize(32);
   fill(purple);
-  text("Reset", quitButtonX, 107);
+  text("Reset", quitButtonX, quitButtonY*3.6);
   fill(purple);
   rect( quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight );
   textSize(32);
@@ -104,12 +104,24 @@ void keyPressed() {
     } else {
       song1.rewind(); //Not playing means song is paused or song position is at the end of the file
     }
- }//End STOP Button
-}//End PLayMusic Buttons
+  }//End STOP Button
+//
+if ( key==CODED && keyCode==ESC ) exit();
+  if ( key=='Q' || key=='q') exit();
+  if ( key=='N' || key=='n') {
+    if ( nightMode==true ) { 
+      nightMode=false;
+    } else { 
+      nightMode=true; 
+    }
+  }
+  //
+}//End KeyPressed
 void mousePressed() {
   OS_on();
   //
   if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight ) exit();
+  if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY*3.6 && mouseY<quitButtonY*3.6+quitButtonHeight ) reset();
   //
   if (mousePressed)
      effect1.play();

@@ -15,10 +15,12 @@ void leftEye() {
   //Easier layering method
   //rect(leftEyeX-eyeDiameter*1/2, leftEyeY-eyeDiameter*1/2, eyeDiameter, eyeDiameter);
   ellipse(leftEyeX, leftEyeY, eyeDiameter, eyeDiameter);
+  loadImage("Images/Eye.png");
 } //End leftEye
 //
 void rightEye() {
   //rect(rightEyeX-eyeDiameter*1/2, rightEyeY-eyeDiameter*1/2, eyeDiameter, eyeDiameter);
   ellipse(rightEyeX, rightEyeY, eyeDiameter, eyeDiameter);
+  loadImage("Images/Eye.png");
 } //End rightEye
 //End Eyes Subprogram

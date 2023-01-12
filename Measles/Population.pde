@@ -38,7 +38,7 @@ void population() {
   xNose3 = faceX + leftEyeY*1/2;
   yNose3 = faceY ;
 //
-  
+  eyeImageX = leftEyeX;
 } //End Population
 //
 // End Population Subprogram
