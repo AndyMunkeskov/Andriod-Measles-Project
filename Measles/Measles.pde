@@ -56,6 +56,7 @@ void draw() {
   if ( splashScreenStart==true ) homeScreen();
 //
   measlesDynamic();
+  Hat();
   eyes(); 
   mouth(); 
   nose();
@@ -121,11 +122,10 @@ void mousePressed() {
   OS_on();
   //
   if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight ) exit();
-  if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY*3.6 && mouseY<quitButtonY*3.6+quitButtonHeight ) reset();
+  if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY*3.6 && mouseY<quitButtonY*3.6+quitButtonHeight )
   //
   if (mousePressed)
      effect1.play();
-     effect1.rewind();
 }//End mousePressed
 //
 //End MAIN Program
