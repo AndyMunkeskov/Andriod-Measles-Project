@@ -125,8 +125,15 @@ void mousePressed() {
   if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY*3.6 && mouseY<quitButtonY*3.6+quitButtonHeight )
   
   //
-  if (mousePressed)
-     effect1.play();
+if ( mousePressed ) {//STOP Button
+    if ( effect1.isPlaying() ) {
+      effect1.pause();
+      effect1.rewind(); //Cue SONG to play from beginning
+    } else {
+      effect1.rewind(); //Not playing means song is paused or song position is at the end of the file
+    }
+  }//End STOP Button
+//
 }//End mousePressed
 //
 //End MAIN Program
