@@ -10,9 +10,6 @@ void measlesDynamic() {
   measleY = random(appHeight*0+measleRadius, appHeight-measleRadius);
   //Night Mode
   measlesColour = ( nightMode==true ) ? color( 156, random( 0 ), 170) : color( 255, random(35), random(0) ) ;
-  //measlesColour = color(156, random(0, 55), random(170) );
-  //purple: (156, 0, 170)
-  //Dark red: (255, 35, 0)
   //
   noStroke();
   fill(measlesColour);

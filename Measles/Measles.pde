@@ -7,18 +7,17 @@ import ddf.minim.ugens.*;
 
 //Global Variables
 int appWidth, appHeight;
-int reset=1;
+int reset=0;
 color resetWhite=#FFFFFF;
 boolean OS_on=false, splashScreenStart=false;
 boolean nightMode;
 float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
-color quitButtonColour, purple=#9100FA, red=#FF030B;
+color quitButtonColour, purple=#9100FA, red=#FF030B, black=#000000, white=#FFFFFF;
 String title ="Start", footer="Quit";
 PFont Quit;
 //
 void setup() {
   //Display & Orientation
-  //size(600,400); //Remind you of Display Geometry
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder
   song1 = minim.loadFile("../Audio/Dramatic.mp3");//able to pass absolute path, file name and extension, and
   effect1 = minim.loadFile("../Audio/Bonk.mp3");
@@ -122,15 +121,15 @@ void mousePressed() {
   OS_on();
   //
   if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight ) exit();
-  if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY*3.6 && mouseY<quitButtonY*3.6+quitButtonHeight )
+  if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY*3.6 && mouseY<quitButtonY*3.6+quitButtonHeight ) reset=0;
   
   //
-if ( mousePressed ) {//STOP Button
+if ( mousePressed ) {
     if ( effect1.isPlaying() ) {
       effect1.pause();
-      effect1.rewind(); //Cue SONG to play from beginning
+      effect1.rewind(); 
     } else {
-      effect1.rewind(); //Not playing means song is paused or song position is at the end of the file
+      effect1.rewind(); 
     }
   }//End STOP Button
 //
