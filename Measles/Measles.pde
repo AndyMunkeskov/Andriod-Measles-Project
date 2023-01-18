@@ -9,7 +9,7 @@ import ddf.minim.ugens.*;
 int appWidth, appHeight;
 int reset=0;
 color resetWhite=#FFFFFF;
-boolean OS_on=false, splashScreenStart=false;
+boolean OS_on=false;
 boolean nightMode;
 float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
 color quitButtonColour, purple=#9100FA, red=#FF030B, black=#000000, white=#FFFFFF;
@@ -51,8 +51,6 @@ void setup() {
 }//End setup
 //
 void draw() {
-  if ( OS_on==true && splashScreenStart==false ) splashScreen(); //OS Level Mouse Click
-  if ( splashScreenStart==true ) homeScreen();
 //
   measlesDynamic();
   Hat();
@@ -73,9 +71,7 @@ void draw() {
 }//End draw
 //
 void keyPressed() {
-    if ( OS_on==true && key==' ' ) {
-    splashScreenStart = true;
-}//if ( key=='P' || key=='p' ) song1.play(); //Parameter is milli-seconds from start of audio file to start playing (illustrate with examples)
+//if ( key=='P' || key=='p' ) song1.play(); //Parameter is milli-seconds from start of audio file to start playing (illustrate with examples)
   if ( key=='P' || key=='p' ) {//Play Pause Stop Button
     if ( song1.isPlaying() ) {
       song1.pause();
@@ -118,13 +114,13 @@ if ( key==CODED && keyCode==ESC ) exit();
   //
 }//End KeyPressed
 void mousePressed() {
-  OS_on();
+
   //
   if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight ) exit();
   if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY*3.6 && mouseY<quitButtonY*3.6+quitButtonHeight ) reset=0;
   
   //
-if ( mousePressed ) {
+if ( mousePressed ) 
     if ( effect1.isPlaying() ) {
       effect1.pause();
       effect1.rewind(); 
@@ -133,6 +129,6 @@ if ( mousePressed ) {
     }
   }//End STOP Button
 //
-}//End mousePressed
+//End mousePressed
 //
 //End MAIN Program

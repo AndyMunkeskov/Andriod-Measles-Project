@@ -4,10 +4,10 @@ color measlesColour;
 void measlesDynamic() {
   //
   //Population Code, must stay here
-  measleDiameter = random(appHeight*1/100, appHeight*1/25);
-  float measleRadius = measleDiameter * 1/2;
-  measleX = random(rectFaceX+measleRadius, rectFaceX+rectFaceWidth-measleRadius); //use smallerDimension
-  measleY = random(appHeight*0+measleRadius, appHeight-measleRadius);
+  measleDiameter = random(faceDiameter*1/70, faceY*1/25);
+  float measleRadius = measleDiameter * 1/3;
+  measleX = random(faceDiameter*0+faceY+faceX-measleRadius ); //use smallerDimension
+  measleY = random(faceDiameter*0+faceY+faceX-measleRadius);
   //Night Mode
   measlesColour = ( nightMode==true ) ? color( 156, random( 0 ), 170) : color( 255, random(35), random(0) ) ;
   //

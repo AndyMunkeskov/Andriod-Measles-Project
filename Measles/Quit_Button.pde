@@ -2,7 +2,7 @@ void quitButtonDraw() {
   fill(red);
   size(400, 400);
   textSize(128);
-  text(" Quit ", 100,100);
+  text(" Quit ", 140,140);
   fill(purple);
   rect( quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight );
   //
