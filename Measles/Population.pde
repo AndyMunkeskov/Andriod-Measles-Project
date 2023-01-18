@@ -41,6 +41,7 @@ void population() {
   eyeImageX = leftEyeX;
 //
   eyediameter1 = eyeDiameter*0.5;
+//
 } //End Population
 //
 // End Population Subprogram

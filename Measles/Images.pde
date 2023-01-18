@@ -1,5 +1,5 @@
 //global variables
-PImage eyeImage, mouthImage, noseImage, HatImage;
+PImage eyeImage, mouthImage, noseImage, HatImage, backGroundImage;
 float eyeImageX, eyeImageY, eyeImageDiameter;
 //
 void imagePopulation(){
